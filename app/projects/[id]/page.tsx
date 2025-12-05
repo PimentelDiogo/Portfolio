@@ -17,7 +17,7 @@ export default function ProjectDetailPage({ params }: Params) {
             <Image src={project.image} alt={project.title} fill className="object-cover object-top rounded-xl" />
           </div>
           <div>
-            <h1 className="text-2xl font-bold">{project.title}</h1>
+            <h1 className="text-2xl font-bold bg-gradient-to-r from-[#8AA8BF] to-[#0D3B66] bg-clip-text text-transparent">{project.title}</h1>
             <p className="text-gray-400">{project.subtitle}</p>
             <div className="mt-3 flex flex-wrap gap-2">
               {project.techStack.map(t => (

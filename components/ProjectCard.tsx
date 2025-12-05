@@ -11,7 +11,7 @@ export default function ProjectCard({ project }: { project: Project }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.4 }}
-      className="group relative bg-gray-800 rounded-2xl overflow-hidden shadow-lg transition-all duration-300 border border-gray-700 hover:-translate-y-[3px] hover:shadow-2xl hover:ring-1 hover:ring-purple-500/20"
+      className="group relative bg-gray-800 rounded-2xl overflow-hidden shadow-lg transition-all duration-300 border border-gray-700 hover:-translate-y-[3px] hover:shadow-2xl hover:ring-1 hover:ring-purple-500/20 hover:brightness-105"
     >
       <div className="relative h-80">
         <Image src={project.image} alt={project.title} fill sizes="(max-width: 900px) 100vw, 600px" className="w-full h-full object-cover object-top" />

@@ -23,7 +23,7 @@ export default function HomePage() {
         </div>
       </section>
       <section className="py-10">
-        <h2 className="text-2xl font-semibold mb-6 bg-gradient-to-r from-slate-200 to-purple-300 bg-clip-text text-transparent">Projetos</h2>
+        <h2 className="text-2xl font-semibold mb-6 bg-gradient-to-r from-[#8AA8BF] to-[#0D3B66] bg-clip-text text-transparent">Projetos</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {projects.map(p => (
             <ProjectCard key={p.id} project={p} />
