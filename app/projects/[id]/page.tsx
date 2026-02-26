@@ -1,9 +1,16 @@
 import Layout from '@components/Layout'
-import { getProject } from '@data/projects'
+import { getProject, getProjects } from '@data/projects'
 import Image from 'next/image'
 import Link from 'next/link'
 
 type Params = { params: { id: string } }
+
+export async function generateStaticParams() {
+  const projects = getProjects()
+  return projects.map((p) => ({
+    id: p.id,
+  }))
+}
 
 export default function ProjectDetailPage({ params }: Params) {
   const project = getProject(params.id)
