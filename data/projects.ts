@@ -1,4 +1,4 @@
-export type ProjectLink = { github?: string; demo?: string }
+export type ProjectLink = { github?: string; demo?: string; playstore?: string }
 export type FullDescription = { challenge: string; solution: string }
 export type Project = {
   id: string
@@ -26,17 +26,56 @@ export const projects: Project[] = [
     links: { github: '#', demo: '#' }
   },
   {
-    id: 'fintrack',
-    title: 'FinTrack',
-    subtitle: 'Controle Financeiro Pessoal',
-    shortDescription: 'Gestão de despesas e receitas com gráficos interativos e definição de metas financeiras inteligentes.',
+    id: 'zaorec',
+    title: 'zaoRec',
+    subtitle: 'App de um instituto bíblico da igreja Zion',
+    shortDescription: 'Plataforma para gestão educacional, permitindo a interação entre professores, alunos e diretores.',
     fullDescription: {
-      challenge: 'Criar uma experiência fluida para lançamento rápido de despesas, incentivando o uso diário pelo usuário.',
-      solution: 'Foco total em UX/UI com animações de micro-interação. Implementação de gráficos nativos para visualização de gastos por categoria em tempo real.'
+      challenge: 'Criar um fluxo onde professores, alunos e diretores consigam gerir notas, presença de aula, agenda e avisos.',
+      solution: 'Hospedagem com Lovable, UI/UX gerada pela Lovable, mas gerenciamento de estado e arquitetura limpa mantidos pelo dev Diogo Pimentel.'
     },
-    techStack: ['Flutter', 'Dart', 'Clean Architecture', 'Local Auth'],
-    image: '/images/fintrack-mockup.svg',
-    links: { github: '#', demo: '#' }
+    techStack: ['Lovable', 'React', 'Clean Architecture', 'State Management'],
+    image: '/images/zaorec-mockup.svg',
+    links: { github: 'https://github.com/PimentelDiogo/zaorec', demo: 'https://zaorec.lovable.app/auth' }
+  },
+  {
+    id: 'godash',
+    title: 'Godash MV',
+    subtitle: 'Acesso rápido aos painéis de BI hospitalar',
+    shortDescription: 'Integração mobile ao BI garantindo maior mobilidade na gestão de dados da instituição.',
+    fullDescription: {
+      challenge: 'Integrar o app ao BI , sendo uma solução de acesso rápido aos painéis criados pelo hospital, garantindo maior interação na mobilidade da gestão de dados da instituição.',
+      solution: 'Migrar do ionic para o flutter, trazendo graficos da syncfusion, usando BLoC com modular, e clean arch, integração com o gateway da MV.'
+    },
+    techStack: ['Flutter', 'Syncfusion', 'BLoC', 'Modular', 'Clean Architecture'],
+    image: '/images/godash-mockup.svg',
+    links: { playstore: 'https://play.google.com/store/apps/details?id=br.com.mv.godashmv&hl=pt_BR' }
+  },
+  {
+    id: 'deloitte-os',
+    title: 'OS App Deloitte',
+    subtitle: 'Sistema de gestão de ordens de serviço',
+    shortDescription: 'Plataforma para gestão de equipamentos e ordens de serviço com alta segurança usando autenticação JWT.',
+    fullDescription: {
+      challenge: 'Sistema de gestão de equipamentos e ordens de serviço com autenticação JWT.',
+      solution: 'Ionic 8 e .NET 10 para rapida integração de abertura e atendimento de ordens de serviço'
+    },
+    techStack: ['Ionic 8', 'Angular 19', '.NET 10', 'SQLite', 'Entity Framework Core', 'JWT', 'RxJS', 'SCSS'],
+    image: '/images/deloitte-mockup.svg',
+    links: { github: 'https://github.com/PimentelDiogo/ionic_deloitte' }
+  },
+  {
+    id: 'dashpy',
+    title: 'DashPy',
+    subtitle: 'Painel visual para análise de tickets via Excel',
+    shortDescription: 'Aplicativo Flutter para visualizar interativamente dados de tickets de arquivos Excel, com pesquisa por voz e audiodescrição.',
+    fullDescription: {
+      challenge: 'Carregamento e parsing de arquivos Excel. Visualização interativa de dados com gráficos de barras (carga de trabalho, solicitações e filas) e pizza (status). Funcionalidade de pesquisa por voz. Descrições em áudio dos dados dos gráficos. Design responsivo para diversos tamanhos de tela.',
+      solution: 'Desenvolvido em Flutter (3.24+), com foco em acessibilidade de áudio, e um visual desacoplado e altamente intuitivo.'
+    },
+    techStack: ['Flutter', 'Excel Parsing', 'Data Visualization', 'Voice Search', 'Audio Accessibility', 'Responsive Design'],
+    image: '/images/dashpy-mockup.svg',
+    links: { github: 'https://github.com/PimentelDiogo/dashFlutter' }
   }
 ]
 

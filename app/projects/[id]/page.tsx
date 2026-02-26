@@ -31,6 +31,9 @@ export default function ProjectDetailPage({ params }: Params) {
               {project.links.demo && (
                 <Link className="px-4 py-2 rounded-xl bg-purple-600 text-white hover:bg-purple-500 shadow-lg hover:shadow-xl transition-colors" href={project.links.demo}>Demo</Link>
               )}
+              {project.links.playstore && (
+                <Link className="px-4 py-2 rounded-xl bg-green-600 text-white hover:bg-green-500 shadow-lg hover:shadow-xl transition-colors" href={project.links.playstore} target="_blank" rel="noopener noreferrer">Play Store</Link>
+              )}
             </div>
           </div>
         </div>
@@ -39,11 +42,11 @@ export default function ProjectDetailPage({ params }: Params) {
       <section className="py-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="bg-gray-800 border border-gray-700 rounded-2xl p-6">
-            <h2 className="text-xl font-semibold mb-2 flex items-center gap-2"><span className="inline-block w-2 h-2 rounded-full bg-rose-500"/>O Desafio</h2>
+            <h2 className="text-xl font-semibold mb-2 flex items-center gap-2"><span className="inline-block w-2 h-2 rounded-full bg-rose-500" />O Desafio</h2>
             <p className="text-gray-300">{project.fullDescription.challenge}</p>
           </div>
           <div className="bg-gray-800 border border-gray-700 rounded-2xl p-6">
-            <h2 className="text-xl font-semibold mb-2 flex items-center gap-2"><span className="inline-block w-2 h-2 rounded-full bg-purple-500"/>A Solução</h2>
+            <h2 className="text-xl font-semibold mb-2 flex items-center gap-2"><span className="inline-block w-2 h-2 rounded-full bg-purple-500" />A Solução</h2>
             <p className="text-gray-300">{project.fullDescription.solution}</p>
           </div>
         </div>
