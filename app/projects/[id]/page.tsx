@@ -1,7 +1,9 @@
 import Layout from '@components/Layout'
 import { getProject, getProjects } from '@data/projects'
-import Image from 'next/image'
 import Link from 'next/link'
+import MediaCarousel from '@components/MediaCarousel'
+
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
 
 type Params = { params: { id: string } }
 
@@ -21,7 +23,8 @@ export default function ProjectDetailPage({ params }: Params) {
       <section className="py-6">
         <div className="flex items-center gap-6">
           <div className="relative w-20 h-20">
-            <Image src={project.image} alt={project.title} fill className="object-cover object-top rounded-xl" />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={`${BASE_PATH}${project.image}`} alt={project.title} className="w-20 h-20 object-cover object-top rounded-xl" />
           </div>
           <div>
             <h1 className="text-2xl font-bold bg-gradient-to-r from-[#8AA8BF] to-[#0D3B66] bg-clip-text text-transparent">{project.title}</h1>
@@ -61,15 +64,20 @@ export default function ProjectDetailPage({ params }: Params) {
 
       <section className="py-6">
         <h2 className="text-xl font-semibold mb-4">Galeria</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div className="bg-gray-900 border border-gray-800 rounded-3xl p-4 flex items-center justify-center">
-            <div className="rounded-[32px] bg-gray-800 ring-1 ring-gray-700 p-2">
-              <div className="relative w-[220px] h-[440px]">
-                <Image src={project.image} alt="mockup" fill className="object-cover rounded-[28px]" />
+        {project.gallery && project.gallery.length > 0 ? (
+          <MediaCarousel items={project.gallery} />
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="bg-gray-900 border border-gray-800 rounded-3xl p-4 flex items-center justify-center">
+              <div className="rounded-[32px] bg-gray-800 ring-1 ring-gray-700 p-2">
+                <div className="relative w-[220px] h-[440px]">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={`${BASE_PATH}${project.image}`} alt="mockup" className="w-full h-full object-cover rounded-[28px]" />
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        )}
       </section>
     </Layout>
   )

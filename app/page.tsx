@@ -2,7 +2,8 @@ import Layout from '@components/Layout'
 import ProjectCard from '@components/ProjectCard'
 import { getProjects } from '@data/projects'
 import Link from 'next/link'
-import Image from 'next/image'
+
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
 
 export default function HomePage() {
   const projects = getProjects()
@@ -11,7 +12,8 @@ export default function HomePage() {
       <section className="py-10 flex flex-col items-center md:items-start md:flex-row gap-6">
         <div className="flex flex-col items-center flex-shrink-0">
           <div className="relative w-64 h-64 rounded-full overflow-hidden border-4 border-gray-800 shadow-xl mb-3">
-            <Image src="/images/avatar.png" alt="Diogo Pimentel" fill className="object-cover" />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={`${BASE_PATH}/images/avatar.png`} alt="Diogo Pimentel" className="w-full h-full object-cover" />
           </div>
         </div>
         <div className="flex flex-col items-center md:items-start text-center md:text-left">

@@ -5,7 +5,10 @@ const nextConfig = {
     assetPrefix: '/Portfolio/',
     images: {
         unoptimized: true,
-    }
+    },
+    env: {
+        NEXT_PUBLIC_BASE_PATH: '/Portfolio',
+    },
 };
 
 export default nextConfig;

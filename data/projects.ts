@@ -1,5 +1,6 @@
 export type ProjectLink = { github?: string; demo?: string; playstore?: string }
 export type FullDescription = { challenge: string; solution: string }
+export type GalleryItem = { src: string; type: 'image' | 'video' }
 export type Project = {
   id: string
   title: string
@@ -8,6 +9,7 @@ export type Project = {
   fullDescription: FullDescription
   techStack: string[]
   image: string
+  gallery?: GalleryItem[]
   links: ProjectLink
 }
 
@@ -22,7 +24,12 @@ export const projects: Project[] = [
       solution: 'Utilizei Dart Isolates para processar cálculos matemáticos fora da thread principal (UI). Implementei arquitetura Offline-First com SQLite e um sistema de fila (Queue) que sincroniza com a API apenas quando há conexão estável (batch upload).'
     },
     techStack: ['Flutter', 'Dart Isolates', 'SQLite', 'Google Maps API', 'Firebase'],
-    image: '/images/drivesense-mockup.svg',
+    image: '/images/telemetry1.jpg',
+    gallery: [
+      { src: '/images/telemetry1.jpg', type: 'image' },
+      { src: '/images/telemetry2.jpg', type: 'image' },
+      { src: '/images/telemetry3.jpg', type: 'image' },
+    ],
     links: { github: 'https://github.com/PimentelDiogo/gps_telemetry', demo: '#' }
   },
   {
@@ -35,7 +42,13 @@ export const projects: Project[] = [
       solution: 'Hospedagem com Lovable, UI/UX gerada pela Lovable, mas gerenciamento de estado e arquitetura limpa mantidos pelo dev Diogo Pimentel.'
     },
     techStack: ['Lovable', 'React', 'Clean Architecture', 'State Management'],
-    image: '/images/zaorec-mockup.svg',
+    image: '/images/zao1.jpg',
+    gallery: [
+      { src: '/images/zao1.jpg', type: 'image' },
+      { src: '/images/zao2.jpg', type: 'image' },
+      { src: '/images/zao3.mp4', type: 'video' },
+      { src: '/images/zao4.mp4', type: 'video' },
+    ],
     links: { github: 'https://github.com/PimentelDiogo/zaorec', demo: 'https://zaorec.lovable.app/auth' }
   },
   {
@@ -48,7 +61,13 @@ export const projects: Project[] = [
       solution: 'Migrar do ionic para o flutter, trazendo graficos da syncfusion, usando BLoC com modular, e clean arch, integração com o gateway da MV.'
     },
     techStack: ['Flutter', 'Syncfusion', 'BLoC', 'Modular', 'Clean Architecture'],
-    image: '/images/godash-mockup.svg',
+    image: '/images/godas1.jpg',
+    gallery: [
+      { src: '/images/godas1.jpg', type: 'image' },
+      { src: '/images/godash2.jpg', type: 'image' },
+      { src: '/images/godash3.jpg', type: 'image' },
+      { src: '/images/godash4.jpg', type: 'image' },
+    ],
     links: { playstore: 'https://play.google.com/store/apps/details?id=br.com.mv.godashmv&hl=pt_BR' }
   },
   {
@@ -74,7 +93,11 @@ export const projects: Project[] = [
       solution: 'Desenvolvido em Flutter (3.24+), com foco em acessibilidade de áudio, e um visual desacoplado e altamente intuitivo.'
     },
     techStack: ['Flutter', 'Excel Parsing', 'Data Visualization', 'Voice Search', 'Audio Accessibility', 'Responsive Design'],
-    image: '/images/dashpy-mockup.svg',
+    image: '/images/dashpy.jpg',
+    gallery: [
+      { src: '/images/dashpy.jpg', type: 'image' },
+      { src: '/images/dashpyvideo.mp4', type: 'video' },
+    ],
     links: { github: 'https://github.com/PimentelDiogo/dashFlutter' }
   }
 ]
