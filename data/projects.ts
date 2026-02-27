@@ -80,7 +80,13 @@ export const projects: Project[] = [
       solution: 'Ionic 8 e .NET 10 para rapida integração de abertura e atendimento de ordens de serviço'
     },
     techStack: ['Ionic 8', 'Angular 19', '.NET 10', 'SQLite', 'Entity Framework Core', 'JWT', 'RxJS', 'SCSS'],
-    image: '/images/deloitte-mockup.svg',
+    image: '/images/os1.png',
+    gallery: [
+      { src: '/images/os1.png', type: 'image' },
+      { src: '/images/os2.png', type: 'image' },
+      { src: '/images/os3.png', type: 'image' },
+      { src: '/images/os5.png', type: 'image' },
+    ],
     links: { github: 'https://github.com/PimentelDiogo/ionic_deloitte' }
   },
   {
