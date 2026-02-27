@@ -23,7 +23,7 @@ export const projects: Project[] = [
     },
     techStack: ['Flutter', 'Dart Isolates', 'SQLite', 'Google Maps API', 'Firebase'],
     image: '/images/drivesense-mockup.svg',
-    links: { github: '#', demo: '#' }
+    links: { github: 'https://github.com/PimentelDiogo/gps_telemetry', demo: '#' }
   },
   {
     id: 'zaorec',
